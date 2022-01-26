@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.Arrays" %>
 <%@ page import="java.util.List" %>
-<%@ page import="java.util.Scanner" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,9 +16,11 @@
 	    for(int i = 0; i < scores.length; i++) {
 	    	sum += scores[i];
 	    }
+	    
+	    double average = sum / (double)scores.length;
 	%>
 	
-	<h4><%="점수 평균은 " + sum/5.0 + " 입니다." %></h4>
+	<h4>점수 평균은 <%=average%> 입니다.</h4>
 
 
 	<%-- 2. 채점 결과 --%>
@@ -28,19 +29,19 @@
 
 		int score = 0;
 		for(int i = 0; i < scoreList.size(); i++) {
-			if(scoreList.get(i) == "O") {
+			if(scoreList.get(i).equals("O")) {
 				score += 10;
 			}
 		}
 	
 	%>
 	
-	<h4><%="체점 결과는 " + score + "점 입니다." %></h4>
+	<h4>체점 결과는 <%=score%>점 입니다.</h4>
 	
 	
 	<%-- 3. 1부터 n까지의 합계를 구하는 함수 --%>
 	<%!
-		public int getSum(int n) {
+		public int allSum(int n) {
 		 	int sum = 0;
 			for (int i = 1; i <= n; i++) {
 				sum += i;
@@ -49,7 +50,7 @@
 		}
 	%>
 	
-	<h4><%="1에서 50까지의 합은 " + getSum(50) %></h4>
+	<h4>1에서 50까지의 합은 <%=allSum(50) %></h4>
 	
 	
 	<%-- 4. 나이 구하기 --%>
@@ -58,10 +59,10 @@
 		
 		String yearString = birthDay.substring(0,4);
 		int year = Integer.parseInt(yearString);
-		int age = 2022 - year;
+		int age = 2022 - year + 1;
 	%>
 
-	<h4><%=birthDay + "의 나이는 " + age + "살 입니다." %></h4>
+	<h4><%=birthDay%>의 나이는 <%=age %>살 입니다.</h4>
 
 
 </body>
