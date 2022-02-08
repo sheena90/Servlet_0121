@@ -16,6 +16,8 @@
 </head>
 <body>
 
+<%--
+
 <%
 
 	Calendar today = Calendar.getInstance();
@@ -36,6 +38,38 @@
 		<h3><%=i*100 %>일 : <span class="text-danger"><%=formatter.format(today.getTime()) %></span></h3>
 
     <% } %>
+
+ --%> 
+
+
+<%
+	Calendar today = Calendar.getInstance();
+	
+	SimpleDateFormat formatter = new SimpleDateFormat("yyyy년 MM월 dd일");
+	String dateString = formatter.format(today.getTime()); // 문자열로 변환하는 과정
+
+%>
+	<h4><%=dateString %>부터 1일</h4>
+	<hr>
+	
+
+<%	for(int i = 1; i <= 10; i++) {
+		if(i == 1) {
+		
+		today.add(Calendar.DATE, 99); 
+%>
+		<h3><%=i*100 %>일 : <span class="text-danger"><%=formatter.format(today.getTime()) %></span></h3>
+
+    <% 
+   	 	} else {
+   	 		today.add(Calendar.DATE, 100);
+    %>
+		<h3><%=i*100 %>일 : <span class="text-danger"><%=formatter.format(today.getTime()) %></span></h3>
+
+	<% 
+		}
+	}
+	%>
 
 
 
