@@ -41,7 +41,6 @@
 <%
 				today.add(Calendar.DATE, -(today.get(Calendar.DATE)) + 1);
 
-				String[] week = {"", "일", "월", "화", "수", "목", "금", "토"};
 				int dayOfWeek = today.get(Calendar.DAY_OF_WEEK);
 				
 				int lastDate = today.getActualMaximum(Calendar.DATE);
