@@ -28,7 +28,7 @@ public class ServletTest02Insert extends HttpServlet {
 				+ "VALUES\r\n"
 				+ "('" + name + "', '" + url + "', now(), now());";
 
-		PrintWriter out = response.getWriter();
+		PrintWriter out = response.getWriter(); //out
 		
 		int count = mysqlService.update(insertQuery);
 		

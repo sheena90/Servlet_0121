@@ -31,6 +31,7 @@
 				<tr class="text-center">
 					<th>사이트</th>
 					<th>사이트 주소</th>
+					<th></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -40,14 +41,14 @@
 				<tr class="text-center">
 					<td><%=resultSet.getString("name") %></td>
 					<td><a href="<%=resultSet.getString("url") %>"><%=resultSet.getString("url") %></a></td>
-					<td><a href="/db/test02_delete?id=<%=resultSet.getInt("id") %>">삭제</a></td>
+					<td><a href="/db/test02_delete?id=<%=resultSet.getInt("id") %>" class="btn btn-info btn-sm">삭제</a></td>
 				</tr>
 			<% } %>
 			</tbody>
 		
 		</table>
 		
-		<a href="/db/test02_2.jsp">사용자 추가</a>
+		<a href="/db/test02_2.jsp">즐겨찾기 추가</a>
 
 	</div>
 </body>
